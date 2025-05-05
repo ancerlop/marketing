@@ -1,0 +1,131 @@
+/* Estilos principales para GamePromo - Marketing para Videojuegos Indie */
+
+:root {
+  --primary: #8a2be2; /* Púrpura vibrante */
+  --secondary: #00b4d8; /* Azul cian */
+  --accent: #ff5470; /* Rosa neón */
+  --dark: #121212; /* Negro profundo */
+  --light: #f8f9fa; /* Blanco suave */
+  --success: #06d6a0; /* Verde menta */
+  --warning: #ffd166; /* Amarillo */
+  --danger: #ef476f; /* Rojo rosado */
+  --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+  --glow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--dark);
+  color: var(--light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #1a1a2e, #16213e);
+  min-height: calc(100vh - 70px);
+}
+
+/* Componentes UI */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: white;
+  box-shadow: var(--glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(138, 43, 226, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+.card {
+  background: rgba(18, 18, 18, 0.8);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(138, 43, 226, 0.2);
+}
+
+.card-title {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Animaciones */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+  }
+}
+
+.glow-effect {
+  animation: glow 2s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+}
